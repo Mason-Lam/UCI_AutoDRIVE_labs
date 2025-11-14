@@ -112,6 +112,8 @@ def extend_disparity(lidar_range_array: np.ndarray[Any] | None, threshold: float
 def compute_speed(center_dist: float, target_dist: float, target_angle: float) -> float:
     degrees = math.degrees(target_angle)
 
+    if target_dist > 5 and abs(degrees) < 5:
+        return 0.9, 0.2
     return 0.6, 0.5
 
 
