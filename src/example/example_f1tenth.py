@@ -61,7 +61,7 @@ def bridge(sid, data):
 
         ########################################################################
 
-        json_msg = f1tenth_1.generate_commands(verbose=True) # Generate vehicle 1 message
+        json_msg = f1tenth_1.generate_commands() # Generate vehicle 1 message
 
         try:
             sio.emit('Bridge', data=json_msg)
